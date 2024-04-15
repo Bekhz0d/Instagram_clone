@@ -1,0 +1,14 @@
+from django.contrib import admin
+from users.models import User, UserConfirmation
+
+
+class UserAdmin(admin.ModelAdmin):
+    list_display = ['id', 'username', 'email', 'phone_number']
+
+
+class UserConfirmationAdmin(admin.ModelAdmin):
+    list_display = ['id']
+
+
+admin.site.register(User, UserAdmin)
+admin.site.register(UserConfirmation, UserConfirmationAdmin)
